@@ -24,18 +24,26 @@
     <script src="data.js"></script>
 
     <script>
-        function testTemplate(foo) {
+        
+
+        function testTemplate(foo) {      
         return `
+            <div class="border border-danger p-3">
+            <h3 class="float-end text-success">$${foo.total}</h3>    
             <h1>${foo.title}</h1>
+            
             ${foo.comment.map
                 (com => `
                 <p>${com.name}</p>
                 <p>${com.message}</p>
-                <p>${com.amount}</p>
+                <p class="text-warning">$${com.amount}</p>
                 <hr>
+         
                 `).join("")
             }
 
+        </div>
+        <br>   
         `  
         }
 
